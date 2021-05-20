@@ -10,6 +10,6 @@ Within this project you'll find the following documents:
 * Project description and structure (this document)
 * [Contribution guidelines](/CONTRIBUTING.md)
 * [How to install/use this project](/INSTALL.md)
-* [Governance model](/doc/governace.md)
+* [Governance model](/doc/governance.md)
 * [Code of conduct](/doc/code-of-conduct.md)
 * [Project license](/LICENSE)
