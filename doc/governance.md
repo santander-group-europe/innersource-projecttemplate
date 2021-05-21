@@ -17,15 +17,12 @@ Given its own nature, it is open to anyone for improvements and contributions, s
 
 ## Roles
 
-Find below a common set of roles that could be defined for any project.
+Find below a common set of roles that could be defined for any project and the specific persons that play them in this template project.
 
 | Role  | Members | Objective |
 | -     | -       | -         |
 | Trusted Committer  | Daniel Izquierdo<br />Alberto Pérez<br />Jesús Alonso  | Is the Host Team. Responsible for both building the house and setting the house rules to ensure their guests are comfortable and can work together effectively.  |
-| Champion | - | Act as focal point within the project to help  advance the plan, establish and implement processes, policies, methodology, and achieve milestones. |
 | Contributor | Anyone willing to help :) | Makes contributions to the project. These contributions could be code or non-code artifacts, such as bug reports, feature requests, or documentation (may or may not be part of the community). |
-
-**It is worth noting that the Champion is added here for reference**. This project does not need it, but it could be useful for others, so we keep it here as a template.
 
 ## Forums and committees
 
@@ -34,8 +31,8 @@ This project doesn't have any meeting, nevertheless below there is a list of mee
 | Meeting  | Level | Forum Profile | Attendees | Periodicity |
 | -        | -     | -             | -         | -           |
 | Checkpoint​ | Initiative​ | Management​ | Project members | Weekly​ |
-Project Board​ | Project​ | Management / Technical​ | Domain Leader<br />Trusted Committer<br />Champion<br />Technical expert | Ad hoc |​
-| Technical meetings​ | Project​ | Technical​ | Trusted Committer<br />Project developers<br />Champion​ | Weekly |​
+Project Board​ | Project​ | Management / Technical​ | Project Leader<br />Trusted Committer<br />Technical expert | Ad hoc |​
+| Technical meetings​ | Project​ | Technical​ | Trusted Committer<br />Project developers | Weekly |​
 
 **Initiative level meetings** have the goal of facilitate, unblock situations, reporting, and set expectations.​
 
@@ -47,10 +44,10 @@ This project is self-content, so the tools to contribute and participate are Git
 
 | Type | Tools |
 |-     | -     |
-| Source Code Management​ | GitHub.com​ |
-| Issues Tracker​ | JIRA Software by Atlassian (SaaS) <br />GitHub Issues​ |
-| Documentation Platform​ | Confluence Software by Atlassian (SaaS)<br />GitHub Pages<br />Microsoft Teams dedicated channels​ |
-| Forums or Chat Platform​ | Microsoft Teams​ |
-| Metrics  & KPIs Platform​ | GrimoireLab |
-| Projects single entry point​ | Portal in Microsoft Teams​ |
-| Announcements and news​ | Portal in Microsoft Teams <br /> Microsoft Teams channel​ |
+| Source Code Management​ | GitHub, GitLab |
+| Issues Tracker​ | JIRA, GitHub Issues, GitLab Issues, Bugzilla​ |
+| Documentation Platform​ | Confluence, GitHub Pages​ |
+| Forums or Chat Platform​ | Slack, Rocketchat, IRC​ |
+| Metrics  & KPIs Platform​ | GrimoireLab, Augur |
+| Projects single entry point​ | \<Web Page\>​ |
+| Announcements and news​ | Slack/Rocketchat/IRC channel​ |
