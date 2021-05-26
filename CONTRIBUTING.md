@@ -1,7 +1,10 @@
 # Contribution Guidelines
 
+This document describes how to send a contribution to the project.
+
 * [Definitions](#definitions): **please this section first**.
-* [Sending a contribution](#sending-a-contribution): describes how to send a contribution to the project.
+* [InnerSource Contribution](#innersource-contribution): describes the process of proposing a new feature or fix to the project.
+* [Sending a contribution](#sending-a-contribution): describes how to send a contribution to the project once it was accepted to be scheduled.
 * [Branch Policy](#branch-policy): describes the project's branching strategy.
 * [Additional Documentation](#additional-documentation): some extra stuff that may be worth reading before start working on your contribution.
 
@@ -15,6 +18,45 @@ A merge that is performed on a branch, without any other merges in between. Next
 
 ![Clean and clear merge seen from `git log --graph --oneline`](/assets/img/screenshots/unclean-merge-log.png)
 
+## InnerSource Contribution
+
+The process of sending a contribution to an InnerSource project must follow the [guidelines described by the InnerSource Commons community](https://github.com/InnerSourceCommons/InnerSourceLearningPath/blob/master/introduction/03-how-works.asciidoc) (please visit the original document to check the current list of people that wrote the document). This section is based on those guidelines, with some modifications.
+
+The process starts when a new feature that is important for an external team or contributor (from now on we simplify it to guest team) is requested to the team in charge of the project (host team) where that feature has to be implemented. The host team is interested in having that feature included in the project. However, the host team is unable to implement that feature in time. At this point, the guest team could decide to implement the feature by themselves and send a pull request to the host team, so the work is ready on time and the host team receive a new feature they did not have time to implement.
+
+There are some issues that should be taken into account and addressed in this document:
+
+* **The guest team should follow the rules of the host team** to make the contribution. That means **those rules must be written and available to them**.
+
+* **Sending the pull requests for review with any prior communication could end with the host team not accepting the pull request due to unforeseen design or implementation problems**. For small features that are not critical to the host team there should be no problem in receiving pull requests for review at any moment. Other more complex solutions would need a more in-depth analysis and discussion. **This process should be clearly written down and publicly available for the guest team so they can decide how to proceed**.
+
+Having said that, the process would be as follows:
+
+* **Guest team identifies a new feature** they need from the host team.
+
+* **Guest team** request that feature to the **host team**.
+
+* **Product owner** has an important role here determining what functionality the host team is interested in accepting as a contribution.
+
+* **Host team** could decide to take the feature or not. If they accept it, they develop the feature as usual and nothing else is needed.
+
+* In other cases, **guest team**, following the rules specified by the **host team**, decides whether to send the pull request directly or, most probably when dealing with medium-to-large sized features, they will inform the **host team** they want to implement the feature by themselves.
+
+* **Host team** verifies the feasibility of the feature and may require some specific information to the **guest team** about how they plan to solve it. **Host team** must ensure the proposal is valid to be accepted in terms of architectural design, coding conventions, dependency usage, or any other requirement they may have. Ideally most of those requirements will be written down within the documentation provided by the **host team**. If new ones are identified, documentation should be updated accordingly as soon as possible.
+
+* **Product owner** ensures the whole process is documented. User stories must be created either by the **host team** or the **guest team** to cover the new feature, including all the needed information for both teams to ensure that the output of the previous point is fully covered.
+
+* **Trusted Committer** will help and guide the **guest team** during the process. **Having the pull request accepted and merged is a common benefit for both parts**, and so it should be understood.
+
+![InnerSource contribution process](/assets/img/diagrams/InnerSourceContribution.png)
+
+The benefits of this approach are:
+
+* Shared resources.
+* Shared knowledge.
+* Scalability.
+* As far as the process is common to different projects, eases mobility across teams.
+* Reduces the time of feature negotiation and escalation processes.
 
 ## Sending a contribution
 
