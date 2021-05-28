@@ -6,16 +6,19 @@ The code review process involves the following actors and pieces:
 
   * **Documentation**  
     * A contributing file is needed to provide the necessary steps and guidelines to allow contributors to send a proper pull request.
-  * **Committer**  
+  * **Author**  
     * The contributor sending the pull request.
+  * **Committer**:
+    * The person or bot who makes the commit into the "main" branch.
   * **Reviewer**  
     * One Trusted Committer having the final decision and merge ability.  
-    * Optionally, a second reviewer could be required to accept the changes.  This second reviewer could be another Trusted Committer or a regular committer (ideally someone who is a candidate to be a Trusted Committer in the near future). The latter will not be allowed to merge, so in this case the merge has to be done by the Trusted Committer.
+    * Optionally, a second reviewer could be required to accept the changes.  This second reviewer could be another Trusted Committer or a regular author (ideally someone who is a candidate to be a Trusted Committer in the near future). The latter will not be allowed to commit (so they cannot do merge commits either), so in this case the merge has to be done by the Trusted Committer.
   * **Local fork of the target project**
-    * Contributors have only read access to upstream repositories unless they are Trusted Committers and act as reviewers in the process. If they act as committers, they will just use their read permission over the upstream repository. In other words, all contributions must be treated equally and go over a proper code review process.
+    * Contributors have only read access to upstream repositories unless they are Trusted Committers and act as reviewers in the process. If they act as commit authors, they will just use their read permission over the upstream repository. In other words, all contributions must be treated equally and go over a proper code review process.
     * The local fork allows to create local branches and modify things without affecting the upstream repository contents nor structure.
   * **Upstream repository**
-    * The project code itself. All builds must be done from this copy (any of their branches or tags).
+    * The project repository, against which all the contributors' forks must be aligned before starting a contribution.
+    * **All builds must be done from this copy** (any of their branches or tags).
     * Only **Trusted Committers** have write access, and they use it only for merging Pull Requests.
     * Nobody commits code directly here.
 
