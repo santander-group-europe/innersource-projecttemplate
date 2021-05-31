@@ -9,6 +9,7 @@ Despite of the title, **it should work either for InnerSource or Open Source pro
 Within this project you'll find the following documents:
 * Project description and structure (this document)
 * [Contribution guidelines](/CONTRIBUTING.md)
+* [Code Review Process](/doc/code-review-process.md)
 * [How to install/use this project](/INSTALL.md)
 * [Governance model](/doc/governance.md)
 * [Code of conduct](/doc/code-of-conduct.md)
