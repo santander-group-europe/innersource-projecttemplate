@@ -13,10 +13,22 @@ This document describes how to send a contribution to the project.
 #### Upstream
 The main Git repository of the project (this is not the same as the `main` branch). It is common to fork a project to send contributions (see [Contribution Guidelines](#contribution-guidelines) section). Those forks need to be aligned with the upstream repository.
 
+#### Fork
+A personal copy of the upstream repository, owned by the contributor, whose only goal is to allow the contributor to make the changes, test them, and send the pull request. The contributor is responsible to keep this fork aligned with the upstream copy.
+
+#### Origin
+The name given to the contributor’s fork.
+
 #### Clean merge
 A merge that is performed on a branch, without any other merges in between. Next screenshot shows what IS NOT a clean merge and therefore we get a dirty Git graph. It's difficult to see the scope of each change and rolling back can be nightmare:
 
-![Clean and clear merge seen from `git log --graph --oneline`](/assets/img/screenshots/unclean-merge-log.png)
+![Unclean merge seen from `git log --graph --oneline`](/assets/img/screenshots/unclean-merge-log.png)
+
+In the above tree, branches are merged without rebasing and thus the result pushing the conflicts resolution and testing to the main branch, on merge time. In that scenario, the person who merges the code should solve the possible conflicts and execute the tests to make sure the changes do not break anything. Both things should fall under the responsibility of the committer, the person who made the changes and must understand their scope and implications.
+
+![Clean and clear merge seen from `git log --graph --oneline`](/assets/img/screenshots/clean-merge.png)
+
+With a proper use of rebase, the committer delivers code ready to merge, conflicts are solved and tests passed on pull request time. Everything is done in the feature/fix branch. Of course, reviewer could also run the tests or make additional testing as part of the review process, that is a separate thing.
 
 ## InnerSource Contribution
 
@@ -83,31 +95,52 @@ General GitHub workflow rules for contributing via fork apply to our project.
   * Who sent those commits (not in the image because `--oneline` option was used to summarize the resulting graph).
   * Ideally only one feature is covered by all of them, no matter if it's split into several commits for clarity, because the tree is clear enough thanks to its shape.
 
-  ## Branch Policy
+## Branch Policy
 
-  This project contains documentation, here we describe a common approach for branching that applies well not only to this case, but also to code oriented repositories.
+This project contains documentation, here we describe a common approach for branching that applies well not only to this case, but also to code oriented repositories.
 
-  The main ideas behind the branching strategy explained here are:
+The main ideas behind the branching strategy explained here are:
   * Keep things as simple as possible.
   * The contributors are fully responsible of their changes.
   * Users are expected to use the latest version released.
+  * Anyone should be able to contribute to any project. That means the branching policy should allow anyone to read, but obviously not to write. Assuming a code review process, that means contributors need a branch of their own to make the changes and, from there, open a pull request to the corresponding upstream branch.
 
-  By following these ideas, the project `main` branch is the place to go to get the latest changes. Some of them could be still under testing processes. This means `main` is as stable as the testing performed on each Pull Request before merging it into master. It is granted that those changes are part of the roadmap (in other words, may not be fully tested but they are not experimental).
+By following these ideas, the project `main` branch is the place to go to get the latest changes. Some of them could be still under testing processes. This means `main` is as stable as the testing performed on each Pull Request before merging it into master. It is granted that those changes are part of the roadmap (in other words, may not be fully tested but they are not experimental).
 
-  ---
-  **From now on, the rest of the section does not apply to this project, but could be useful for code repositories**. This is just an example to show different points that should be covered, of course the specific approach each project may want to take for each of them can be different depending on their needs.   
+The process of adding new changes to the repository is strongly related to the [review process](/doc/code-review-process.md):
+  * Each change will come by means of a pull request.  
+  * For that purpose, contributors need to be able to create a specific branch, so they need a fork to create that branch.
+  * The branch will be merged into the corresponding upstream branch, being the contributor responsible of the changes needed to perform a clean merge.
+  * Once the code is merged, the contributor’s branch can be safely removed.
 
-  ---
+![Pull Request Schema: Pull Request process from a local branch to upstream ](/assets/img/diagrams/pull-request-schema.png)
+<center>Pull Request process from a local branch to upstream </center>
 
-  For more stable versions, we use tags and releases. Each release is associated to a tag in the repository, so it's easy to get the snapshot of each release if needed.
+Regarding the project repository—defined as upstream above—the idea is to keep a structure of branches as simple as possible. In the ideal world, the master branch only receives well-tested changes, so it is stable. In other words, the confidence in master branch stability relies on the confidence on the tests and code reviews.
 
-  In case of a bug, it will be fixed on the current `main` branch and not backported. Users are expected to be always in the latest release, supporting several versions at a time is out of the current possibilities of the project in terms of effort.
+---
+**From now on, the rest of the section does not apply to this project, but could be useful for code repositories**. This is just an example to show different points that should be covered, of course the specific approach each project may want to take for each of them can be different depending on their needs.   
 
-  **Corner case**: if a bug broke an older version and there were not any possibility of updating from that version to a newer one for a representative number of users, a branch would be created from that point, the fix would be applied on that branch and then merged into the `main` branch. The branch created for the fix is expected to be deleted as soon as users of that branch are able to update to the latest release.
+---
 
-  **Experimental development**: sometimes it is needed to break everything to explore new options for future releases (always under the roadmap of the project) while some developments for the next one are still being tested and pending to be merged. In those cases, a new branch will be created until `main` branch gets to a specific release point. At that point the new branch will be reintegrated into `main`.
+At given points of the history, a developer may want to release some versions that will be well tested and cover certain use cases. For that purpose, the proposal is to use tags, so it will be easy to get a specific version of the projects code based on the tags. We could also consider that intermediate versions—those between tags—are incomplete or needs some extra validation, so the real stable versions of the code are marked by the release tags.
 
-  This means that most of the time there will be just one or two branches upstream, the rest will be part of the contributors' forks.
+In case several versions of the project have to co-exist in production at the same time (that is, users do not have to update to the latest version), branches may be created from some release tags. To do this, the policy proposal is as follows:
+  * Lazy branch creation. Do not create a release branch if there is nothing to do in the branch yet. Create the branch whenever you need to fix or add something.
+  * Define a deprecation date. Release branches cannot be infinitely maintained. Each release should have an end of support date from which the team will not update that version anymore. [Ubuntu releases](https://wiki.ubuntu.com/Releases) are a well known example that combines regular releases with a life of 9 months and LTS (Long Term Support) releases that offers support for 5 years for main packages (3 in the case of other flavors). [OpenStack 6 months release cycle](https://releases.openstack.org/) is another example of this, where each release has stable points later on within the corresponding release series. Each series has also a given [status or maintenance phase](https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases).
+  * Define a merge workflow for fixes and features. Either adding changes to master and then merging them to all release branches or adding changes to one release branch and then merging them to master and the rest of the affected branches could work. There are projects using different policies out there, and there are reasons to choose one or another. Some problems that we may face are:
+    * Cherry picking commits from master to release branches is a process that needs to be done carefully to avoid to end up with duplicate commits at some point of the history. It also may cause problems due to changes applied to master that never came to some branches and are needed for the fix or feature to be integrated.
+    * Merging from the first affected release to master and the rest of affected releases will grant that the target branches are in a later point of history. However, we may find conflicts due to later changes that were not applied to the first affected release, so we will need to solve those conflicts in order to reintegrate the changes.
+
+In the case of features or fixes that need more than one developer working at the same time the recommendation is to check whether this can be split into smaller and independent features. If there is a dependency among them, the developers should be aware of the blockers and relations to merge them accordingly. Developers could create a specific branch to include all the changes related to a feature inside, and then reintegrate that branch into master. However, to do that developers would need to review things twice. First to merge changes into the feature branch and second to reintegrate the feature branch into master. In addition to that, this second review will be complex because it will include a number of changes. Indeed, if developers follow the git flow approach with a develop branch, a third review process will take place. All of these cases will require automatic testing to avoid manual reviews as much as possible.
+
+An example of a very straightforward policy that applies to this specific project is the following:
+  * For stable versions, we use tags and releases. Each release is associated to a tag in the repository, so it's easy to get the snapshot of each release if needed.
+  * In case of a bug, it will be fixed on the current `main` branch and not backported. **Users are expected to be always in the latest release**, supporting several versions at a time is currently out of the current possibilities of the project in terms of effort.
+  * **Corner case**: if this were a code project and a bug broke an older version with not any possibility of updating from that version to a newer one for a representative number of users, a branch would be created from that point, the fix would be applied on that branch and then merged into the `main` branch. The branch created for the fix is expected to be deleted as soon as users of that branch are able to update to the latest release.
+  * **Experimental development**: sometimes it is needed to break everything to explore new options for future releases (always under the roadmap of the project) while some developments for the next one are still being tested and pending to be merged. In those cases, a new branch will be created until `main` branch gets to a specific release point. At that point the new branch will be reintegrated into `main`.
+
+This means that most of the time there will be just one or two branches upstream, the rest will be part of the contributors' forks.
 
 
 ## Additional Documentation
