@@ -81,11 +81,12 @@ As this project contains documentation only, changes can be made through the Git
 General GitHub workflow rules for contributing via fork apply to our project.
 
 * Fork the project. See [GitHub documentation on forking a repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)). Make sure you configure the upstream repo as a remote so you will be able to fetch newer changes from upstream later on, if needed.
-* Create a local branch (`git checkout -b <branch_name>`).
+* Clone your fork locally (`git clone <URL of your fork>`) and enter the local clone.
+* Create and set your branch (`git checkout -b <branch_name>`).
 * Make your changes. Please, follow the [Additional Documentation](#additional-documentation). **If you plan to add new files to the documentation** folder, please follow the [template document](doc/_template.md) included in the `doc` folder.
-* Push your local branch to your fork (not to upstream, in the worst case you won't have push permission upstream and will get an error, unless you are a trusted committer, in which case please double check your command line).
+* Push your local branch to **your fork** in Github (`git push origin <branch_name>`. Do not push to upstream. Usually you won't have push permission upstream and will get an error, unless you are a trusted committer, in which case please double check your command line!).
 * Go to GitHub, create the Pull Request. See [GitHub documentation on how to create a Pull Request from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
-  * The contributor is responsible of providing commits that allow [clean merges](#clean-merge). In case this not happens, they were requested by the reviewers to rebase their branch and push again the changes.
+  * The contributor is responsible of providing commits that allow [clean merges](#clean-merge). In case this doesn't happen, the reviewers will request to rebase the branch and push again the changes.
 * Reviewer is responsible of merging changes, even if the contributor has permissions to do it. Merges should look like the following one (obtained via `git log --graph --oneline` command):
 ![Clean and clear merge seen from `git log --graph --oneline`](/assets/img/screenshots/merge-log.png)
 * From the image, is clear:

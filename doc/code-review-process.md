@@ -5,7 +5,7 @@ This is an essential part of the InnerSource journey, not only to ensure code qu
 The code review process involves the following actors and pieces:
 
   * **Documentation**  
-    * A contributing file is needed to provide the necessary steps and guidelines to allow contributors to send a proper pull request.
+    * A document is needed to provide the necessary steps and guidelines to allow contributors to send a proper pull request. It is usually named CONTRIBUTING.
   * **Author**  
     * The contributor sending the pull request.
   * **Committer**:
