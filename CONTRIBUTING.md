@@ -11,7 +11,7 @@ This document describes how to send a contribution to the project.
 ## Definitions
 
 #### Upstream
-The main Git repository of the project (this is not the same as the `main` branch). It is common to fork a project to send contributions (see [Contribution Guidelines](#contribution-guidelines) section). Those forks need to be aligned with the upstream repository.
+The main Git repository of the project (this is not the same as the `main` branch). It is common to fork a project to send contributions (see [Sending a contribution](#sending-a-contribution) section). Those forks need to be aligned with the upstream repository.
 
 #### Fork
 A personal copy of the upstream repository, owned by the contributor, whose only goal is to allow the contributor to make the changes, test them, and send the pull request. The contributor is responsible to keep this fork aligned with the upstream copy.
@@ -78,13 +78,13 @@ In this project there are two main types of contributions:
 
 As this project contains documentation only, changes can be made through the GitHub web interface. For completeness we include here the manual process that is usually followed for code contributions. It applies also to documentation, however the GitHub interface is usually easier for newcomers and people not used to work with Git repositories.
 
-General GitHub workflow rules for contributing via fork apply to our project.
+General GitHub workflow rules for contributing via fork apply to our project. [A practical example based on this repository](/doc/pull-request-example.md) is also available to check. Find below a summary of the most important steps:
 
 * Fork the project. See [GitHub documentation on forking a repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)). Make sure you configure the upstream repo as a remote so you will be able to fetch newer changes from upstream later on, if needed.
 * Clone your fork locally (`git clone <URL of your fork>`) and enter the local clone.
 * Create and set your branch (`git checkout -b <branch_name>`).
-* Make your changes. Please, follow the [Additional Documentation](#additional-documentation). **If you plan to add new files to the documentation** folder, please follow the [template document](doc/_template.md) included in the `doc` folder.
-* Push your local branch to **your fork** in Github (`git push origin <branch_name>`. Do not push to upstream. Usually you won't have push permission upstream and will get an error, unless you are a trusted committer, in which case please double check your command line!).
+* Make your changes. Please, follow the [Additional Documentation](#additional-documentation).
+* Push your local branch to **your fork** in GitHub (`git push origin <branch_name>`. Do not push to upstream. Usually you won't have push permission upstream and will get an error, unless you are a trusted committer, in which case please double check your command line!).
 * Go to GitHub, create the Pull Request. See [GitHub documentation on how to create a Pull Request from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
   * The contributor is responsible of providing commits that allow [clean merges](#clean-merge). In case this doesn't happen, the reviewers will request to rebase the branch and push again the changes.
 * Reviewer is responsible of merging changes, even if the contributor has permissions to do it. Merges should look like the following one (obtained via `git log --graph --oneline` command):
