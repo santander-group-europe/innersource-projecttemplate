@@ -12,5 +12,6 @@ Within this project you'll find the following documents:
 * [Code Review Process](/doc/code-review-process.md)
 * [How to install/use this project](/INSTALL.md)
 * [Governance model](/doc/governance.md)
+* [Trusted Commiter Career Path](/doc/tc-career-path.md) (how to become a Trusted Commiter)
 * [Code of conduct](/doc/code-of-conduct.md)
 * [Project license](/LICENSE)
