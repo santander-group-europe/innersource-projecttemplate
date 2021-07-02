@@ -34,6 +34,7 @@ For the moment this project is tiny, so communicating with us is simple and basi
 ### Internal
 
 Within this project you'll find the following documents:
+
 * For users:
   * Project basic description (this document) is the single standard entry point.
   * The [project license](/LICENSE) rules what you are legally allowed to do with it.
@@ -58,3 +59,4 @@ The following documentation is tightly related to this project but is not provid
   Everything related should be directly or indirectly linked and browsable from here.
 * You can learn more about the InnerSource program at Organization *link here to your central info point*.
 * A good place to get more information about InnerSource in general (eg. outside the Organization) is the [InnerSourceCommons](https://innersourcecommons.org).
+
