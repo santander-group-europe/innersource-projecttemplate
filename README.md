@@ -19,22 +19,11 @@ In order to just [use](/INSTALL.md) (download) this repo you don't need to insta
 
 See the [Contribution guidelines](/CONTRIBUTING.md) for directions on how to set up a development environment.
 
-## Get in touch
-
-*This section explains how to get in touch with the project team. In order to keep it simple, don't describe all possible interactions (There's a [Governance model](/doc/governance.md) for that), just the first most basic ones...''*
-
-For the moment this project is tiny, so communicating with us is simple and basic.
-
-* Users: Just hover the mouse over the contributors to find who are members and contact any of us. Or open an issue.
-* Contributors: For deeper interactions, the [Governance model](/doc/governance.md) should include also pointers to people and communication channels (chat channels, forums, regular meetups, etc), as well as rules, but we're so tiny we don't actually have any of these in this project.
-* Other: For any other questions on this project, please contact *dicortazar*.
-
 ## Read the docs
 
 ### Internal
 
 Within this project you'll find the following documents:
-
 * For users:
   * Project basic description (this document) is the single standard entry point.
   * The [project license](/LICENSE) rules what you are legally allowed to do with it.
@@ -60,3 +49,12 @@ The following documentation is tightly related to this project but is not provid
 * You can learn more about the InnerSource program at Organization *link here to your central info point*.
 * A good place to get more information about InnerSource in general (eg. outside the Organization) is the [InnerSourceCommons](https://innersourcecommons.org).
 
+## Get in touch
+
+*This section explains how to get in touch with the project team. In order to keep it simple, don't describe all possible interactions (There's a [Governance model](/doc/governance.md) for that), just the first most basic ones...''*
+
+For the moment this project is tiny, so communicating with us is simple and basic.
+
+* Users: Just hover the mouse over the contributors to find who are members and contact any of us. Or open an issue.
+* Contributors: For deeper interactions, the [Governance model](/doc/governance.md) should include also pointers to people and communication channels (chat channels, forums, regular meetups, etc), as well as rules, but we're so tiny we don't actually have any of these in this project.
+* Other: For any other questions on this project, please contact *dicortazar*.
