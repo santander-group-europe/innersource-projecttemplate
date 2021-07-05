@@ -1,9 +1,9 @@
 # Your first contributions
 
 This document tries to guide you to your first contributions to this project.
-First off, please, feel wery welcome. We love external contributions!
+First off, please, feel very welcome. We love external contributions!
 
-The usual path starts getting acquainted with the project, then finding a suitable task to juno into.
+The usual path starts getting acquainted with the project, then finding a suitable task to jump into.
 There are many different ways to contribute, all of them worthy. The main one is coding (writing, in
 our case). And there are resources that might make your life as contributor easier.
 
@@ -23,7 +23,7 @@ Another usual entry way is to get familiar with it
 by figuring out how it works and evaluating how far the project's facilities and assets
 help your experience hitting the project for the first times.
 
-As newcomer you have a fresh view that the people envolved have most likely lost. 
+As newcomer you have a fresh view that the people involved have most likely lost. 
 This could materialize in contributions like feature requests, documentation updates, clearer documentation,
 maybe some additional documentation resources like videos, etc. This way you get yourself known by the team.
 
@@ -34,20 +34,20 @@ Please specify what kind of contribution you are seeking.
 
 * Report bug:
   Searching the web you'll find tons of HowTo articles on how to write a good bug report. The basics are:
-  * Be spefic about the sypthoms. Provide a step by step procedure to reproduce the failure
+  * Be spefic about the symptoms. Provide a step by step procedure to reproduce the failure
   * Be clear about the impact to you. Bonus point if you can do so with impact on others who use the
     project under different contexts.
-  * Follow up your request
+  * Follow up your request.
   * Bonus point again if you can advance some root-cause analysis. In this case it might be a misleading
     expression, a new concept lacking explanation or coming too late, ...
 * New feature:
   Similar rules apply to feature requests. Here the expected behaviour isn't that clear so pay attention to:
-  * Aviod ambigüity
-  * It is a good practice to use the userstory-mantra: As (profile) y want (proposal) in order to (purpose).
-    Be careful sepparating your purpose from your proposal.
+  * Aviod ambiguity
+  * It is a good practice to use the userstory-mantra: As (profile) I want (proposal) in order to (purpose).
+    Be careful separating your purpose from your proposal.
     Expect us writer (development) team to come up with better alternative solutions to your purpose.
   * Specify enough acceptance criteria so that the team doesn't rely on you to validate the solution.
-  * Follow up your request
+  * Follow up your request.
 * Documentation:
   * If you contribute to documentation inside repository you'll follow a very similar (but simplified) procedure
     to contributing (markdown) **code**. As a template project we don't have pipelines to worry about, but in other
@@ -64,7 +64,7 @@ Please specify what kind of contribution you are seeking.
 First of all you'll need to set up a development environment and that might imply a lot of stuff:
 * Design and coding standards:
   * Mark comments for the user of the template in _italic_.
-* TDD:
+* Test Driven Development (TDD):
   Being this project about textual content we cannot automate tests, but we can remember to think from the reader's perspective.
   1. Think of what content and how you'd like to find before writing.
   1. Create the structure and validate it
@@ -89,7 +89,7 @@ First of all you'll need to set up a development environment and that might impl
   * Github's online file editor supports markdown and provides a preview (build chain).
 * Technical documentation:
   The domain this project is about is InnerSource and Open Source participation. The technology used is natural language
-  coded in [markdown](https://guides.github.com/features/mastering-markdown/) standard supported by Github and many other application.
+  coded in [markdown](https://guides.github.com/features/mastering-markdown/) standard supported by Github and many other applications.
   * Must reads:
     * Architecture:
       This template project we basically have just two kinds of text documents:
