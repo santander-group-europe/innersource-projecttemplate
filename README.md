@@ -33,6 +33,7 @@ Within this project you'll find the following documents:
   * Here's a **guide** for [your first contributions](/doc/your-first-contributions.md).
   * The formal [Contribution guidelines](/CONTRIBUTING.md) rule the contribution **process**,
     which conceptually includes the [Code Review Process](/doc/code-review-process.md).
+  * At some point you may want to know [how to become a Trusted Commiter](/doc/tc-career-path.md).
   * The [Governance model](/doc/governance.md) describes the **organization of social interaction**,
     including the [license](/LICENSE) and the [code of conduct (CoC)](/doc/code-of-conduct.md).
 
