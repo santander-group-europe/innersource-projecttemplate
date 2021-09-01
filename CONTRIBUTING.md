@@ -1,12 +1,16 @@
 # Contribution Guidelines
 
-This document describes how to send a contribution to the project.
+If you are joining the project right now, please read the [guide to your first contributions](/doc/your-first-contributions.md) first for context and preparations.
 
-* [Definitions](#definitions): **please this section first**.
-* [InnerSource Contribution](#innersource-contribution): describes the process of proposing a new feature or fix to the project.
-* [Sending a contribution](#sending-a-contribution): describes how to send a contribution to the project once it was accepted to be scheduled.
-* [Branch Policy](#branch-policy): describes the project's branching strategy.
-* [Additional Documentation](#additional-documentation): some extra stuff that may be worth reading before start working on your contribution.
+Then, this document describes how to send a contribution to the project:
+
+1. [Definitions](#definitions): **please this section first**.
+1. [InnerSource Contribution](#innersource-contribution): describes the process of proposing a new feature or fix to the project.
+1. [Sending a contribution](#sending-a-contribution): describes how to send a contribution to the project once it was accepted to be scheduled.
+1. [Branch Policy](#branch-policy): describes the project's branching strategy.
+1. [Additional Documentation](#additional-documentation): some extra stuff that may be worth reading before start working on your contribution.
+
+Once sent, the contribution will undergo a [Code Review Process](/doc/code-review-process.md).
 
 ## Definitions
 
@@ -40,7 +44,7 @@ There are some issues that should be taken into account and addressed in this do
 
 * **The guest team should follow the rules of the host team** to make the contribution. That means **those rules must be written and available to them**.
 
-* **Sending the pull requests for review with any prior communication could end with the host team not accepting the pull request due to unforeseen design or implementation problems**. For small features that are not critical to the host team there should be no problem in receiving pull requests for review at any moment. Other more complex solutions would need a more in-depth analysis and discussion. **This process should be clearly written down and publicly available for the guest team so they can decide how to proceed**.
+* **Sending the pull requests for review without any prior communication could end with the host team not accepting the pull request due to unforeseen design or implementation problems**. For small features that are not critical to the host team there should be no problem in receiving pull requests for review at any moment. Other more complex solutions would need a more in-depth analysis and discussion. **This process should be clearly written down and publicly available for the guest team so they can decide how to proceed**.
 
 Having said that, the process would be as follows:
 
@@ -85,7 +89,7 @@ General GitHub workflow rules for contributing via fork apply to our project. [A
 * Create and set your branch (`git checkout -b <branch_name>`).
 * Make your changes. Please, follow the [Additional Documentation](#additional-documentation).
 * Push your local branch to **your fork** in GitHub (`git push origin <branch_name>`. Do not push to upstream. Usually you won't have push permission upstream and will get an error, unless you are a trusted committer, in which case please double check your command line!).
-* Go to GitHub, create the Pull Request. See [GitHub documentation on how to create a Pull Request from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+* Go to **your fork** in GitHub and request the (assigned) upstream TC's to pull your changes. See [GitHub documentation on how to create a Pull Request from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
   * The contributor is responsible of providing commits that allow [clean merges](#clean-merge). In case this doesn't happen, the reviewers will request to rebase the branch and push again the changes.
 * Reviewer is responsible of merging changes, even if the contributor has permissions to do it. Merges should look like the following one (obtained via `git log --graph --oneline` command):
 ![Clean and clear merge seen from `git log --graph --oneline`](/assets/img/screenshots/merge-log.png)
@@ -106,7 +110,7 @@ The main ideas behind the branching strategy explained here are:
   * Users are expected to use the latest version released.
   * Anyone should be able to contribute to any project. That means the branching policy should allow anyone to read, but obviously not to write. Assuming a code review process, that means contributors need a branch of their own to make the changes and, from there, open a pull request to the corresponding upstream branch.
 
-By following these ideas, the project `main` branch is the place to go to get the latest changes. Some of them could be still under testing processes. This means `main` is as stable as the testing performed on each Pull Request before merging it into master. It is granted that those changes are part of the roadmap (in other words, may not be fully tested but they are not experimental).
+By following these ideas, the project `master` branch is the place to go to get the latest changes. Some of them could be still under testing processes. This means `master` is as stable as the testing performed on each Pull Request before merging it into master. It is granted that those changes are part of the roadmap (in other words, may not be fully tested but they are not experimental).
 
 The process of adding new changes to the repository is strongly related to the [review process](/doc/code-review-process.md):
   * Each change will come by means of a pull request.  
@@ -120,7 +124,7 @@ The process of adding new changes to the repository is strongly related to the [
 Regarding the project repository—defined as upstream above—the idea is to keep a structure of branches as simple as possible. In the ideal world, the master branch only receives well-tested changes, so it is stable. In other words, the confidence in master branch stability relies on the confidence on the tests and code reviews.
 
 ---
-**From now on, the rest of the section does not apply to this project, but could be useful for code repositories**. This is just an example to show different points that should be covered, of course the specific approach each project may want to take for each of them can be different depending on their needs.   
+_**From now on, the rest of the section does not apply to this project, but could be useful for bigger repositories**. This is just an example to show different points that should be covered, of course the specific approach each project may want to take for each of them can be different depending on their needs._   
 
 ---
 
@@ -133,13 +137,13 @@ In case several versions of the project have to co-exist in production at the sa
     * Cherry picking commits from master to release branches is a process that needs to be done carefully to avoid to end up with duplicate commits at some point of the history. It also may cause problems due to changes applied to master that never came to some branches and are needed for the fix or feature to be integrated.
     * Merging from the first affected release to master and the rest of affected releases will grant that the target branches are in a later point of history. However, we may find conflicts due to later changes that were not applied to the first affected release, so we will need to solve those conflicts in order to reintegrate the changes.
 
-In the case of features or fixes that need more than one developer working at the same time the recommendation is to check whether this can be split into smaller and independent features. If there is a dependency among them, the developers should be aware of the blockers and relations to merge them accordingly. Developers could create a specific branch to include all the changes related to a feature inside, and then reintegrate that branch into master. However, to do that developers would need to review things twice. First to merge changes into the feature branch and second to reintegrate the feature branch into master. In addition to that, this second review will be complex because it will include a number of changes. Indeed, if developers follow the git flow approach with a develop branch, a third review process will take place. All of these cases will require automatic testing to avoid manual reviews as much as possible.
+In the case of features or fixes that need more than one developer working at the same time the recommendation is to check whether this can be split into smaller and independent features. If there is a dependency among them, the developers should be aware of the blockers and relations to merge them accordingly. Developers could create a specific branch to include all the changes related to a feature inside, and then reintegrate that branch into master. However, to do that developers would need to review things twice. First to merge changes into the feature branch and second to reintegrate the feature branch into master. In addition to that, this second review will be complex because it will include a number of changes. Indeed, if developers follow the Gitflow approach with a develop branch, a third review process will take place. All of these cases will require automatic testing to avoid manual reviews as much as possible.
 
 An example of a very straightforward policy that applies to this specific project is the following:
   * For stable versions, we use tags and releases. Each release is associated to a tag in the repository, so it's easy to get the snapshot of each release if needed.
-  * In case of a bug, it will be fixed on the current `main` branch and not backported. **Users are expected to be always in the latest release**, supporting several versions at a time is currently out of the current possibilities of the project in terms of effort.
-  * **Corner case**: if this were a code project and a bug broke an older version with not any possibility of updating from that version to a newer one for a representative number of users, a branch would be created from that point, the fix would be applied on that branch and then merged into the `main` branch. The branch created for the fix is expected to be deleted as soon as users of that branch are able to update to the latest release.
-  * **Experimental development**: sometimes it is needed to break everything to explore new options for future releases (always under the roadmap of the project) while some developments for the next one are still being tested and pending to be merged. In those cases, a new branch will be created until `main` branch gets to a specific release point. At that point the new branch will be reintegrated into `main`.
+  * In case of a bug, it will be fixed on the current `master` branch and not backported. **Users are expected to be always in the latest release**, supporting several versions at a time is currently out of the current possibilities of the project in terms of effort.
+  * **Corner case**: if this were a code project and a bug broke an older version with not any possibility of updating from that version to a newer one for a representative number of users, a branch would be created from that point, the fix would be applied on that branch and then merged into the `master` branch. The branch created for the fix is expected to be deleted as soon as users of that branch are able to update to the latest release.
+  * **Experimental development**: sometimes it is needed to break everything to explore new options for future releases (always under the roadmap of the project) while some developments for the next one are still being tested and pending to be merged. In those cases, a new branch will be created until `master` branch gets to a specific release point. At that point the new branch will be reintegrated into `master`.
 
 This means that most of the time there will be just one or two branches upstream, the rest will be part of the contributors' forks.
 
@@ -152,3 +156,4 @@ In addition to all of the above mentioned, we encourage you to read the followin
 * [Git happens! 6 Common Git mistakes and how to fix them](https://about.gitlab.com/blog/2018/08/08/git-happens/). Written by Sam Beckham.
 * [GitHub guide on mastering markdown](https://guides.github.com/features/mastering-markdown/).
 * [GitHub docs contribution guide](https://github.com/github/docs/blob/main/CONTRIBUTING.md).
+* [Comparing Git workflows](https://www.atlassian.com/git/tutorials/comparing-workflows).
