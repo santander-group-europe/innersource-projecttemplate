@@ -13,11 +13,9 @@ Despite of the title, **it should work either for InnerSource or Open Source pro
 
 *This file is the standard entry point for newcomers, so make sure you keep it small, understandable and straight-forward. Point to other more detailed resources as needed.*
 
-## Using this software/project
+## Use this software/project
 
 In order to just [use](/INSTALL.md) (download) this repo you don't need to install any tool. Not even git!
-
-See the [Contribution guidelines](/CONTRIBUTING.md) for directions on how to set up a development environment.
 
 ## Read the docs
 
